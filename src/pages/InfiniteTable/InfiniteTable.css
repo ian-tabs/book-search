@@ -1,0 +1,16 @@
+.ui.input.search-bar {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  padding: 5px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  font-size: 1.1em;
+  max-width: 70% !important;
+}
+
