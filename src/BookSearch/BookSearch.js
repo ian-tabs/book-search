@@ -1,11 +1,12 @@
 import React, { useState, useRef, useCallback } from "react";
-import useBookSearch from "../../custom-hooks/useBookSearch";
+import useBookSearch from "../custom-hooks/useBookSearch"
 import { Input, Table, Loader } from "semantic-ui-react";
-import DynamicTableRowCells from "../../components/DynamicTableRowCells";
+import DynamicTableRowCells from "../components/DynamicTableRowCells";
 import { debounce } from "lodash";
-import './InfiniteTable.css';
+import './BookSearch.css';
 
-function InfiniteTable() {
+
+function BookSearch() {
 
   const [query, setQuery] = useState('');
   const [pageNumber, setPageNumber] = useState(1);
@@ -57,7 +58,7 @@ function InfiniteTable() {
             const { title, author, firstPublishYear } = book;
             const refVariable = (books.length === index + 1) ? lastBookElementRef : null;
             return (<DynamicTableRowCells
-              key={index + 1}
+              rowKey={index + 1}
               refVariable={refVariable}
               rows={{
                 rowNumber: index + 1,
@@ -80,4 +81,4 @@ function InfiniteTable() {
   );
 }
 
-export default InfiniteTable;
+export default BookSearch;
