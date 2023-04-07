@@ -1,9 +1,9 @@
 import React, { useState, useRef, useCallback } from "react";
-import useBookSearch from "../custom-hooks/useBookSearch"
+import useBookSearch from "./custom-hooks/useBookSearch"
 import { Input, Table, Loader } from "semantic-ui-react";
-import DynamicTableRowCells from "../components/DynamicTableRowCells";
+import DynamicTableRowCells from "./components/DynamicTableRowCells";
 import { debounce } from "lodash";
-import './BookSearch.css';
+import './BookFinder.css';
 
 
 function BookSearch() {
