@@ -14,7 +14,7 @@ jobs:
      steps:
       - uses: actions/checkout@v2
       - name: Set environment variable
-        run: echo "REACT_APP_GOOGLE_BOOKS_API_KEY=${{ secrets.GOOGLE_BOOKS_API_KEY }}" >> $GITHUB_ENV
+        run: echo "REACT_APP_GOOGLE_BOOKS_API_KEY=${{ secrets.REACT_APP_GOOGLE_BOOKS_API_KEY }}" >> $GITHUB_ENV
       - name: Install dependencies
         run: npm install
       - name: Build app
@@ -25,4 +25,4 @@ jobs:
           branch: gh-pages
           folder: build
         env:
-          REACT_APP_GOOGLE_BOOKS_API_KEY: ${{ secrets.GOOGLE_BOOKS_API_KEY }}
+          REACT_APP_GOOGLE_BOOKS_API_KEY: ${{ secrets.REACT_APP_GOOGLE_BOOKS_API_KEY }}
