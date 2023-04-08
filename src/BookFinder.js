@@ -3,6 +3,7 @@ import useBookSearch from "./custom-hooks/useBookSearch"
 import { Input, Table, Loader } from "semantic-ui-react";
 import DynamicTableRowCells from "./components/DynamicTableRowCells";
 import { debounce } from "lodash";
+
 import './BookFinder.css';
 
 
@@ -35,6 +36,15 @@ function BookSearch() {
   function handleInputChange(e) {
     debouncedSearch(e.target.value, 1);
   }
+
+  let testURL = `https://www.googleapis.com/books/v1/volumes?q=harry+potter&filter=ebooks&key=${process.env.REACT_APP_GOOGLE_BOOKS_API_KEY}`
+
+  console.log(testURL);
+
+
+  fetch(testURL)
+    .then(response => response.json())
+    .then(data => console.log(data));
 
   return (
     <>
